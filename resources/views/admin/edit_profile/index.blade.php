@@ -22,7 +22,7 @@
     <div class="bg-light rounded p-4 mt-3">
         <div class="row g-4 justify-content-evenly">
             <div class="col-sm-4 col-lg-2 d-flex justify-content-center align-items-center">
-                <img src="{{asset('img/user/'.$user->foto)}}" class="position-relative rounded" style="max-width:128px" alt="">
+                <img src="{{asset('img/user/'.$user->foto)}}" class="position-relative rounded" style="height:128px;" alt="">
             </div>
             <div class="col-sm-8 col-lg-8">
                 <table class="">
