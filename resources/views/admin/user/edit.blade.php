@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
             </div>

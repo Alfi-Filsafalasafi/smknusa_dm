@@ -62,15 +62,21 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3 @error('harga') has-error @enderror">
-                                    <label for="floatingTextarea" class="form-label">Harga</label>
-                                    <input type="number" name="harga" value="{{ old('harga') ?? $barang_jasa->harga }}" class="form-control" id="exampleInputEmail1">
+                                    <label for="floatingTextarea" class="form-label">Harga </label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1" >Rp</span>
+                                        <input type="number" name="harga" value="{{ old('harga') ?? $barang_jasa->harga }}" class="form-control" >
+                                    </div>
                                     @error('harga')
                                         <small>{{$message}}</small>
                                     @enderror
                                 </div>
                                 <div class="mb-3 @error('diskon') has-error @enderror">
                                     <label for="floatingTextarea" class="form-label">Diskon <small style="font-size:12px">*boleh dikosongi</small></label>
-                                    <input type="number" name="diskon" value="{{ old('diskon') ?? $barang_jasa->diskon }}" class="form-control" id="exampleInputEmail1">
+                                    <div class="input-group mb-3">
+                                        <input type="number" name="diskon" value="{{ old('diskon') ?? $barang_jasa->diskon }}" class="form-control" >
+                                        <span class="input-group-text" id="basic-addon1" >%</span>
+                                    </div>
                                     @error('diskon')
                                         <small>{{$message}}</small>
                                     @enderror
@@ -115,7 +121,7 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3 @error('link_portfolio') has-error @enderror">
-                                    <label for="floatingTextarea" class="form-label">Link Portfolio</label>
+                                    <label for="floatingTextarea" class="form-label">Link Portfolio <small style="font-size:12px">*boleh dikosongi </small></label>
                                         <input type="text" name="link_portfolio" value="{{ old('link_portfolio') ?? $barang_jasa->link_portfolio}}" class="form-control" >
                                     @error('link_portfolio')
                                         <small>{{$message}}</small>
@@ -124,7 +130,7 @@
                             </div>
                         </div>
                         <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </form>
             </div>

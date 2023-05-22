@@ -85,7 +85,7 @@ class UserController extends Controller
         $user = User::find($user->id);
         $user->name = $validateData['nama'];
         $user->email = $validateData['email'];
-        if($user->password != ''){
+        if($request->password != ''){
             $user->password = Hash::make($validateData['password']);
         }
         $user->nip = $validateData['nip'];

@@ -107,6 +107,7 @@
                         </div>
                     </div> -->
                     <a href="{{route('edit_profile.index', ['user' => Auth::user()->id])}}" class="nav-item nav-link @yield('editProfile')"><i class="fa fa-id-card me-2"></i>Edit Profile</a>
+                </div>
                 @else
                 <div class="navbar-nav w-100">
                     <a href="{{route('admin.dashboard')}}" class="nav-item nav-link @yield('dashboard')"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
