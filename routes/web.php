@@ -22,7 +22,10 @@ use App\Http\Controllers\HomeUserController;
 Route::get('/', [HomeUserController::class, 'index'])->name('user.user.index');
 Route::get('/tentang', [HomeUserController::class, 'tentang'])->name('user.tentang.index');
 Route::get('/iklanUtama/detail/{iklan_utama}', [HomeUserController::class, 'detailIklan'])->name('user.iklan_utama.detail');
-Route::get('/barang/detail/{barang}', [HomeUserController::class, 'detailBarang'])->name('user.barang.detail');
+Route::get('/iklanJurusan/detail/{iklan_jurusan}', [HomeUserController::class, 'detailIklanJurusan'])->name('user.iklan_jurusan.detail');
+Route::get('/produk/detail/{barang}', [HomeUserController::class, 'detailBarang'])->name('user.barang.detail');
+Route::get('/produk/{nama_jurusan}/{id_jurusan}', [HomeUserController::class, 'produk'])->name('user.produk.jurusan');
+Route::get('/cara_pesan', [HomeUserController::class, 'caraPesan'])->name('user.cara_pesan');
 
 Route::get('admin/nih/bos', function() {
     return view('auth.login');

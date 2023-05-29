@@ -15,30 +15,30 @@
             Lihat Produk
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size : 12px;">
-            <a class="dropdown-item" href="#">Desain Komunikasi Visual</a>
+            <a class="dropdown-item @yield('dkv')" href="{{route('user.produk.jurusan', ['id_jurusan' => '3', 'nama_jurusan' => 'dkv'])}}">Desain Komunikasi Visual</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Rekayasa Perangkat Lunak</a>
+            <a class="dropdown-item @yield('rpl')" href="{{route('user.produk.jurusan', ['id_jurusan' => '1', 'nama_jurusan' => 'rpl'])}}">Rekayasa Perangkat Lunak</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Teknik Komunikasi Jaringan</a>
+            <a class="dropdown-item @yield('tkj')" href="{{route('user.produk.jurusan', ['id_jurusan' => '2', 'nama_jurusan' => 'tkj'])}}">Teknik Komunikasi Jaringan</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Mekatronika</a>
+            <a class="dropdown-item @yield('mkt')" href="{{route('user.produk.jurusan', ['id_jurusan' => '4', 'nama_jurusan' => 'mkt'])}}">Mekatronika</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Teknik Bodi Otomotif</a>
+            <a class="dropdown-item @yield('tpbo')" href="{{route('user.produk.jurusan', ['id_jurusan' => '6', 'nama_jurusan' => 'tpbo'])}}">Teknik Bodi Otomotif</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Teknik Pengelasan</a>
+            <a class="dropdown-item @yield('tl')" href="{{route('user.produk.jurusan', ['id_jurusan' => '8', 'nama_jurusan' => 'tl'])}}">Teknik Pengelasan</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Teknik Bodi Kendaraan Ringan</a>
+            <a class="dropdown-item @yield('tkro')" href="{{route('user.produk.jurusan', ['id_jurusan' => '5', 'nama_jurusan' => 'tkro'])}}">Teknik Kendaraan Ringan Otomatif</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Teknik Permesinan</a>
+            <a class="dropdown-item @yield('tpm')" href="{{route('user.produk.jurusan', ['id_jurusan' => '7', 'nama_jurusan' => 'tpm'])}}">Teknik Permesinan</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Agribisnis Tanaman Pangan dan Horikultura</a>
+            <a class="dropdown-item @yield('atph')" href="{{route('user.produk.jurusan', ['id_jurusan' => '9', 'nama_jurusan' => 'atph'])}}">Agribisnis Tanaman Pangan dan Horikultura</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Agribisnis Pengolahan Hasil Pertanian</a>
+            <a class="dropdown-item @yield('aphp')" href="{{route('user.produk.jurusan', ['id_jurusan' => '10', 'nama_jurusan' => 'aphp'])}}">Agribisnis Pengolahan Hasil Pertanian</a>
             <div class="dropdown-divider"></div>
           </div>
         </li>
         <li class="nav-item @yield('caraActive') ml-auto">
-          <a class="nav-link @yield('cara')" href="">Cara Pesan</a>
+          <a class="nav-link @yield('cara')" href="{{route('user.cara_pesan')}}">Cara Pesan</a>
         </li>
         <li class="nav-item @yield('tentangActive') ml-auto">
           <a class="nav-link @yield('tentang')" href="{{route('user.tentang.index')}}">Tentang Kami</a>

@@ -4,26 +4,27 @@
     Home
 @endsection
 
-@section('homeActive', 'active')
-@section('home', 'text-success')
+@section('produkActive', 'active')
+@section('produk', 'text-success')
+@section($nama_jurusan, 'text-success')
+
 @section('content')
-    
-    <main role="main" style="margin-top:70px;">
+<main role="main" style="margin-top:70px;">
      
      <div id="myCarousel" class="carousel slide pointer-event" data-ride="carousel">
        <ol class="carousel-indicators">
-        @forelse($iklanUtamas as $key => $iklanUtama)
+        @forelse($iklan_jurusans as $key => $iklan_jurusan)
          <li data-target="#myCarousel" data-slide-to="{{$loop->iteration - 1}}" class="{{ $key === 0 ? ' active' : '' }}"></li>
         @empty
         
         @endforelse
         </ol>
        <div class="carousel-inner">
-        @forelse($iklanUtamas as $key => $iklanUtama)
+        @forelse($iklan_jurusans as $key => $iklan_jurusan)
         <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title><img src="img/he.jpg" alt=""></title><rect width="100%" height="100%" fill="#777"/><img src="img/he.jpg" alt=""><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg> -->
-           <a href="{{route('user.iklan_utama.detail', ['iklan_utama' => $iklanUtama])}}">
-            <img src="{{asset('img/iklan_utama/'. $iklanUtama->foto_utama )}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
+           <a href="{{route('user.iklan_jurusan.detail', ['iklan_jurusan' => $iklan_jurusan])}}">
+            <img src="{{asset('img/iklan_jurusan/'. $iklan_jurusan->foto_utama )}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
            </a>
            <div class="container">
              <div class="carousel-caption" sty>
@@ -31,7 +32,7 @@
            </div>
          </div>
         @empty
-
+       <h6 class="text-center mt-5">--- Tidak ada data ---</h6>
         @endforelse
 
        </div>
@@ -50,6 +51,7 @@
    <div class="album">
      
      <div class="container">
+      <h3 class="text-center text-success mb-5">{{$nama_lengkap->nama_lengkap}}</h3>
        <h3 style="margin-bottom: 5%;">Penawaran Kami</h3>
        <div class="row">
         @forelse($penawarans as $penawaran)
@@ -82,16 +84,15 @@
 
          </div>
          @empty
+       <h6 class="text-center">--- Tidak ada data ---</h6>
          @endforelse
        </div>
      </div>
      </div>
    </div>
 
-
-
-   <!-- List Produk -->
- <div class="album py-5 bg-light">
+      <!-- List Produk -->
+ <div class="album py-5">
    <div class="container">
      <h3 style="margin-bottom: 5%;">List Produk</h3>
      <div class="row">
@@ -110,37 +111,11 @@
          </div>
        </div>
        @empty
+       <h6 class="text-center">--- Tidak ada data ---</h6>
        @endforelse
      </div>
    </div>
    </div>
  </div>
 
-   <!-- Keunggulan -->
- <div class="container marketing">
-   <!-- Three columns of text below the carousel -->
-   <h3 style="margin: 2% 0 7% 0;">Keunggulan</h3>
-   <div class="row">
-     
-     <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-      
-     </div><!-- /.col-lg-4 -->
-     <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      
-     </div><!-- /.col-lg-4 -->
-     <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>And lastly this, the third column of representative placeholder content.</p>
-       
-     </div><!-- /.col-lg-4 -->
-   </div><!-- /.row -->
- </div>
-
- @endsection
+@endsection
