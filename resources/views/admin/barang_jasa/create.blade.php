@@ -70,9 +70,9 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3 @error('diskon') has-error @enderror">
-                                    <label for="floatingTextarea" class="form-label">Diskon <small style="font-size:12px">*boleh dikosongi</small></label>
+                                    <label for="floatingTextarea" class="form-label">Diskon <small style="font-size:12px">*isi 0 jika tidak ada diskon</small></label>
                                     <div class="input-group mb-3">
-                                        <input type="number" name="diskon" value="{{ old('diskon') }}" class="form-control" >
+                                        <input type="number" name="diskon" value="{{ old('diskon') ?? 0 }}" class="form-control" >
                                         <span class="input-group-text" id="basic-addon1" >%</span>
                                     </div>
                                     @error('diskon')

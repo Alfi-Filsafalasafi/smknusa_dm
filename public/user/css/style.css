@@ -1,0 +1,24 @@
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-container img {
+  max-height: 100%;
+  width: auto;
+}
+
+.single-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-item.active{
+  color:#28a745 !important;
+}
+
+
+

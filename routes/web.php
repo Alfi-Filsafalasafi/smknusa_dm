@@ -6,6 +6,7 @@ use App\Http\Controllers\IklanJurusanController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditProfileController;
+use App\Http\Controllers\HomeUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ use App\Http\Controllers\EditProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [HomeUserController::class, 'index'])->name('user.user.index');
+Route::get('/tentang', [HomeUserController::class, 'tentang'])->name('user.tentang.index');
+Route::get('/iklanUtama/detail/{iklan_utama}', [HomeUserController::class, 'detailIklan'])->name('user.iklan_utama.detail');
+Route::get('/barang/detail/{barang}', [HomeUserController::class, 'detailBarang'])->name('user.barang.detail');
 
 Route::get('admin/nih/bos', function() {
     return view('auth.login');
