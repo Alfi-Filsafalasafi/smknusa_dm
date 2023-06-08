@@ -55,7 +55,7 @@
             <tr>
                 <th class="align-top">Keterangan</th>
                 <th class="align-top">:</th>
-                <td>{{$iklan_jurusan->keterangan}}</td>
+                <td><div style="white-space: pre-wrap;">{{ $iklan_jurusan->keterangan }}</div></td>
             </tr>
             <tr>
                 <td class="pb-2"></td>
@@ -63,15 +63,15 @@
            @if($iklan_jurusan->diskon == '' | $iklan_jurusan->diskon == 0)
             <tr>
                 <td colspan="3">
-                    <h1 class="display-6 harga">Rp.{{$iklan_jurusan->harga}}</h1>
+                    <h1 class="display-6 harga">Rp {{number_format($iklan_jurusan->harga, 0, ',', '.')}}</h1>
                 </td>
             </tr>
            @else
             <tr>
                 <td colspan="3">
                     <div class="inline-container">
-                        <h1 class="display-6 strikethrough">{{$iklan_jurusan->harga}}</h1>
-                        <h1 class="display-6 ms-2 harga">Rp.{{ intval($iklan_jurusan->harga - ($iklan_jurusan->harga * $iklan_jurusan->diskon / 100))}}</h1>
+                        <h1 class="display-6 strikethrough">{{number_format($iklan_jurusan->harga, 0, ',', '.')}}</h1>
+                        <h1 class="display-6 ms-2 harga">Rp.{{ number_format(intval($iklan_jurusan->harga - ($iklan_jurusan->harga * $iklan_jurusan->diskon / 100)), 0, ',', '.')}}</h1>
                         <div class="bg-primary ms-2 px-1 text-white">-{{$iklan_jurusan->diskon}}%</div>
                     </div>
                 </td>

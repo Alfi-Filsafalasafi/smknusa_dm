@@ -63,7 +63,7 @@
                                     <label for="floatingTextarea" class="form-label">Harga </label>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1" >Rp</span>
-                                        <input type="number" name="harga" value="{{ old('harga') }}" class="form-control" >
+                                        <input type="text" name="harga" id="hargaInput" value="{{ old('harga') }}" class="form-control" >
                                     </div>
                                     @error('harga')
                                         <small>{{$message}}</small>
@@ -107,7 +107,25 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="{{ asset('jquery.js') }}"></script>
+<script>
+    // Mendapatkan referensi ke elemen input
+    var hargaInput = document.getElementById('hargaInput');
 
+    // Fungsi untuk memformat nilai saat pengguna mengetik
+    function formatHarga() {
+        // Menghapus karakter selain angka dari nilai inputan
+        var harga = hargaInput.value.replace(/[^0-9]/g, '');
+
+        // Memformat inputan dengan menambahkan titik sebagai pemisah ribuan
+        harga = new Intl.NumberFormat('id-ID').format(harga);
+
+        // Memasukkan nilai yang telah diformat kembali ke inputan
+        hargaInput.value = harga;
+    }
+
+    // Menggunakan event listener untuk memanggil fungsi formatHarga() saat pengguna mengetik
+    hargaInput.addEventListener('input', formatHarga);
+</script>
 
 <script type="text/javascript">
       

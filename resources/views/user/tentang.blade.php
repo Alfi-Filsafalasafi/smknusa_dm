@@ -25,19 +25,25 @@
               <img src="{{asset('user/img/about.jpg')}}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+              <h3>SMKNUSA Deals Marketplace menyediakan produk-produk 
+                unggulan dari kreatifitas siswa-siswi SMKN 
+                  1 Purwosari.</h3>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+              Produk unggulan ini berupa barang dan jasa dari 4 program keahlian yaitu Informatika,
+Elektronika, Permesinan, dan Pertanian. dengan keunggulan :
               </p>
               <ul>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="bi bi-check-circle"></i> Mudah dalam proses pembelian, mudah berkomunikasi 
+        dengan admin, dan tidak menyulitkan pembeli</li>
+                <li><i class="bi bi-check-circle"></i> Produk asli karya siswa SMKN 1 Purwosari, meningkatkan 
+        kompetensi siswa, dan mencintai produk dalam negeri</li>
+                <li><i class="bi bi-check-circle"></i>Produk yang dijual dijamin memiliki kualitas yang sangat 
+        tinggi karena dibuat dengan ketekunan dan keuletan.</li>
               </ul>
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              </p>
+              SMKNusa DM mengangkat produk-produk unggulan yang sudah diuji dari segi kelayakan dan efektifitas penggunaan
+sehingga sudah tidak diragukan lagi dari segi kualitasnya.
+Website Deals Marketplace ini dapat menampilkan produk dalam bentuk katalog yang apik.</p>
   
             </div>
           </div>

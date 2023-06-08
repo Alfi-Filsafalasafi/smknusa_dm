@@ -32,7 +32,7 @@
            </div>
          </div>
         @empty
-       <h6 class="text-center mt-5">--- Tidak ada data ---</h6>
+       <h6 class="text-center mt-5">--- Tidak ada iklan ---</h6>
         @endforelse
 
        </div>
@@ -68,15 +68,17 @@
                     <div class="d-flex justify-content-between align-items-center  mb-2">
                         <div class="bg-danger ms-2 px-1 text-white" style="display: inline-block; font-size:12px;">{{ $penawaran->diskon != 0 ? '-' . $penawaran->diskon . '%' : '' }}</div>
                         <div style="display: flex; justify-content: flex-end; align-items: end;">
-                            <h6 class="text-danger" style="margin: 0 auto;">{{ $penawaran->penawaran }}</h6>
+                          <h6 class="text-danger" style="margin: 0 auto;">
+                          {{ Illuminate\Support\Str::limit($penawaran->penawaran, 16, '...') }}
+                          </h6>
                         </div>
                     </div>
                     <div class="d-flex justify-content-start align-items-end">
                         @if($penawaran->diskon == '0')
-                        <h5 style="">Rp {{$penawaran->harga}} </h5>
+                        <h5 style="">Rp {{ number_format($penawaran->harga, 0, ',', '.') }} </h5>
                         @else
                         <h6 style="color:grey; text-decoration: line-through;">Rp.{{$penawaran->harga}}</h6>&nbsp;
-                        <h5 style="color:#28a745;"> Rp.{{ intval($penawaran->harga - ($penawaran->harga * $penawaran->diskon / 100))}}</h5>
+                        <h5 style="color:#28a745;"> Rp {{ number_format(intval($penawaran->harga - ($penawaran->harga * $penawaran->diskon / 100)), 0, ',', '.')}}</h5>
                         @endif
                     </div>
                 </div>
@@ -106,7 +108,7 @@
            <div class="card-body">
              <h6 class="single-line">{{$barang->nama}}</h6>
              <!-- <p class="card-text">Baju produk asdmaskdm askd maslkdm aslkd mkl</p> -->
-             <h5 style="">Rp. {{$barang->harga}}</h5>
+             <h6 style="">Rp {{ number_format($barang->harga, 0, ',', '.') }}</h6>
            </div>
          </div>
        </div>

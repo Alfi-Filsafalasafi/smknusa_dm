@@ -29,8 +29,8 @@
             </div>
             <div class="col-sm-12 col-lg-6 mt-5">
                 <h4>{{$barang_jasa->nama}}</h4>
-                <p>{{$barang_jasa->deskripsi}}</p>
-                <h2 class="hargabarang">Rp. {{ intval($barang_jasa->harga - ($barang_jasa->harga * $barang_jasa->diskon / 100))}}</h2>
+                <div style="white-space: pre-wrap;">{{ $barang_jasa->deskripsi }}</div>
+                <h2 class="hargabarang mt-4">Rp. {{ intval($barang_jasa->harga - ($barang_jasa->harga * $barang_jasa->diskon / 100))}}</h2>
                 @if($barang_jasa->diskon != '0')
                 <div class="inline-container">
                     <div class="bg-danger ms-2 px-1 text-white">-{{$barang_jasa->diskon}}%</div>
@@ -52,6 +52,11 @@
                     <span><b>Pengiriman :</b></span> &nbsp;
                     <span>{{$barang_jasa->pengiriman}}</span>
                 </div>
+                @if($barang_jasa->link_portfolio != '')
+                    <div class="mt-4">
+                        <a href="{{$barang_jasa->link_portfolio}}" class="text-success" target="_blank"><u>Lihat Portfolio Kami</u></a> <br>
+                    </div>
+                @endif
                 <a href="https://wa.me/62{{$barang_jasa->narahubung_wa}}" class="btn btn-success my-4"><i class="fab fa-whatsapp mr-2"></i>Beli Sekarang</a>
             </div>
         </div>

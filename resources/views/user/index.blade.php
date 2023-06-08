@@ -66,15 +66,17 @@
                     <div class="d-flex justify-content-between align-items-center  mb-2">
                         <div class="bg-danger ms-2 px-1 text-white" style="display: inline-block; font-size:12px;">{{ $penawaran->diskon != 0 ? '-' . $penawaran->diskon . '%' : '' }}</div>
                         <div style="display: flex; justify-content: flex-end; align-items: end;">
-                            <h6 class="text-danger" style="margin: 0 auto;">{{ $penawaran->penawaran }}</h6>
+                            <h6 class="text-danger" style="margin: 0 auto;">
+                            {{ Illuminate\Support\Str::limit($penawaran->penawaran, 16, '...') }}
+                            </h6>
                         </div>
                     </div>
                     <div class="d-flex justify-content-start align-items-end">
                         @if($penawaran->diskon == '0')
-                        <h5 style="">Rp {{$penawaran->harga}} </h5>
+                        <h5 style="">Rp {{ number_format($penawaran->harga, 0, ',', '.') }} </h5>
                         @else
-                        <h6 style="color:grey; text-decoration: line-through;">Rp.{{$penawaran->harga}}</h6>&nbsp;
-                        <h5 style="color:#28a745;"> Rp.{{ intval($penawaran->harga - ($penawaran->harga * $penawaran->diskon / 100))}}</h5>
+                        <h6 style="color:grey; text-decoration: line-through;">{{$penawaran->harga}}</h6>&nbsp;
+                        <h5 style="color:#28a745;"> Rp {{ number_format(intval($penawaran->harga - ($penawaran->harga * $penawaran->diskon / 100)), 0, ',', '.')}}</h5>
                         @endif
                     </div>
                 </div>
@@ -105,7 +107,7 @@
            <div class="card-body">
              <h6 class="single-line">{{$barang->nama}}</h6>
              <!-- <p class="card-text">Baju produk asdmaskdm askd maslkdm aslkd mkl</p> -->
-             <h5 style="">Rp. {{$barang->harga}}</h5>
+             <h6 style="">Rp. {{ number_format($barang->harga, 0, ',', '.') }}</h6>
            </div>
          </div>
        </div>
@@ -124,21 +126,21 @@
      
      <div class="col-lg-4">
        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-      
+       <h2>Efisien</h2>
+       <p>Mudah dalam proses pembelian, mudah berkomunikasi 
+        dengan admin, dan tidak menyulitkan pembeli</p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      
+       <h2>Orisinil</h2>
+       <p>Produk asli karya siswa SMKN 1 Purwosari, meningkatkan 
+        kompetensi siswa, dan mencintai produk dalam negeri </p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>And lastly this, the third column of representative placeholder content.</p>
-       
+       <h2>High Quality</h2>
+       <p>Produk yang dijual dijamin memiliki kualitas yang sangat 
+        tinggi karena dibuat dengan ketekunan dan keuletan </p>
      </div><!-- /.col-lg-4 -->
    </div><!-- /.row -->
  </div>

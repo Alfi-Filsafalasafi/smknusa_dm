@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Barang;
 use File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class BarangController extends Controller
 {
@@ -18,10 +20,13 @@ class BarangController extends Controller
     {
         $user = Auth::user();
         $idJurusan = $user->id_jurusan;
+        $jurusan = DB::table('jurusans')->where('id', $idJurusan)->first();
         
         // Mengambil baris dari tabel Barang yang memiliki id_jurusan yang sesuai
         $barang = Barang::where('id_jurusan', $idJurusan)->get();
-        return view('admin.barang_jasa.index', ['barang_jasa' => $barang]);
+        return view('admin.barang_jasa.index', [
+            'barang_jasa' => $barang, 
+            'jurusan' => $jurusan]);
     }
 
     public function detail($barang_jasa){
@@ -58,7 +63,7 @@ class BarangController extends Controller
         $barang = new Barang();
         $barang->nama = $validateData['nama'];
         $barang->deskripsi = $validateData['keterangan'];
-        $barang->harga = $validateData['harga'];
+        $barang->harga = str_replace('.', '',$validateData['harga']);
         $barang->diskon = $validateData['diskon'];
         $barang->penawaran = $validateData['penawaran'];
         $barang->type = $validateData['tipe'];
@@ -134,7 +139,7 @@ class BarangController extends Controller
        
         $barang->nama = $validateData['nama'];
         $barang->deskripsi = $validateData['keterangan'];
-        $barang->harga = $validateData['harga'];
+        $barang->harga = str_replace('.', '',$validateData['harga']);
         $barang->diskon = $validateData['diskon'];
         $barang->penawaran = $validateData['penawaran'];
         $barang->type = $validateData['tipe'];

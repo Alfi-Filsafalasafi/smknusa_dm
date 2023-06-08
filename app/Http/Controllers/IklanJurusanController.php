@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\IklanJurusan;
 use File;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 
 class IklanJurusanController extends Controller
@@ -19,10 +21,14 @@ class IklanJurusanController extends Controller
     {
         $user = Auth::user();
         $idJurusan = $user->id_jurusan;
+        $jurusan = DB::table('jurusans')->where('id', $idJurusan)->first();
+        
         
         // Mengambil baris dari tabel IklanJurusan yang memiliki id_jurusan yang sesuai
         $iklanJurusan = IklanJurusan::where('id_jurusan', $idJurusan)->get();
-        return view('admin.iklan_jurusan.index', ['iklan_jurusan' => $iklanJurusan]);
+        return view('admin.iklan_jurusan.index', [
+            'iklan_jurusan' => $iklanJurusan,
+            'jurusan' => $jurusan]);
     }
 
     public function detail($iklan_jurusan){
@@ -54,7 +60,7 @@ class IklanJurusanController extends Controller
         $iklanJurusan = new IklanJurusan();
         $iklanJurusan->nama = $validateData['nama'];
         $iklanJurusan->keterangan = $validateData['keterangan'];
-        $iklanJurusan->harga = $validateData['harga'];
+        $iklanJurusan->harga = str_replace('.', '',$validateData['harga']);
         $iklanJurusan->diskon = $validateData['diskon'];
         $iklanJurusan->penawaran = $validateData['penawaran'];
         $iklanJurusan->type = $validateData['tipe'];
@@ -122,7 +128,7 @@ class IklanJurusanController extends Controller
        
         $iklanJurusan->nama = $validateData['nama'];
         $iklanJurusan->keterangan = $validateData['keterangan'];
-        $iklanJurusan->harga = $validateData['harga'];
+        $iklanJurusan->harga = str_replace('.', '',$validateData['harga']);
         $iklanJurusan->diskon = $validateData['diskon'];
         $iklanJurusan->penawaran = $validateData['penawaran'];
         $iklanJurusan->type = $validateData['tipe'];

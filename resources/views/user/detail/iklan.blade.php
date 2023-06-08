@@ -37,7 +37,7 @@
                     <tr>
                         <th class="align-top">Keterangan</th>
                         <th class="align-top">:</th>
-                        <td>{{$iklan_utama->keterangan}}</td>
+                        <td><div style="white-space: pre-wrap;">{{ $iklan_utama->keterangan }}</div></td>
                     </tr>
                     <tr>
                         <td class="pb-2"></td>

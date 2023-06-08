@@ -17,7 +17,7 @@
     @endif
     <div class="row g-4">
         <div class="col-sm-6 d-flex">
-            <strong>Iklan Jurusan > {{$barang_jasa->nama}}</strong>
+            <strong>Barang dan Jasa > {{$barang_jasa->nama}}</strong>
         </div>
         <div class="col-sm-6 d-flex align-items-end justify-content-end">
             <a href="{{ route('barang_jasa.edit', $barang_jasa->id) }}" class="btn btn-sm btn-warning me-3"><i class="far fa-edit"></i></a>
@@ -59,7 +59,7 @@
             <tr>
                 <th class="align-top">Keterangan</th>
                 <th class="align-top">:</th>
-                <td>{{$barang_jasa->deskripsi}}</td>
+                <td><div style="white-space: pre-wrap;">{{ $barang_jasa->deskripsi }}</div></td>
             </tr>
             <tr>
                 <td class="pb-2"></td>
@@ -67,15 +67,15 @@
            @if($barang_jasa->diskon == '' | $barang_jasa->diskon == 0)
             <tr>
                 <td colspan="3">
-                    <h1 class="display-6 harga">Rp.{{$barang_jasa->harga}}</h1>
+                    <h1 class="display-6 harga">Rp {{ number_format($barang_jasa->harga, 0, ',', '.')}}</h1>
                 </td>
             </tr>
            @else
             <tr>
                 <td colspan="3">
                     <div class="inline-container">
-                        <h1 class="display-6 strikethrough">{{$barang_jasa->harga}}</h1>
-                        <h1 class="display-6 ms-2 harga">Rp.{{ intval($barang_jasa->harga - ($barang_jasa->harga * $barang_jasa->diskon / 100))}}</h1>
+                        <h1 class="display-6 strikethrough">{{ number_format($barang_jasa->harga, 0, ',', '.') }}</h1>
+                        <h1 class="display-6 ms-2 harga">Rp {{ number_format(intval($barang_jasa->harga - ($barang_jasa->harga * $barang_jasa->diskon / 100)), 0, ',', '.' )}}</h1>
                         <div class="bg-primary ms-2 px-1 text-white">-{{$barang_jasa->diskon}}%</div>
                     </div>
                 </td>

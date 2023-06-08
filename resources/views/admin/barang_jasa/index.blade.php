@@ -26,12 +26,8 @@
             <strong>Barang dan Jasa</strong>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-6 d-flex align-items-end justify-content-end">
-            <a href=""><small class="me-3">Lihat hasil di website</small></a>
-        @if (count($barang_jasa) < 3)
+            <a href="{{route('user.produk.jurusan', ['id_jurusan' => $jurusan->id, 'nama_jurusan' => $jurusan->nama])}}" target="_blank"><small class="me-3">Lihat hasil di website</small></a>
             <a href="{{ route('barang_jasa.create') }}" class="btn btn-sm btn-success px-3">+</a>
-        @else
-            <button class="btn btn-sm btn-success px-3" disabled>+</button>
-        @endif
         </div>
     </div>
     
