@@ -10,39 +10,41 @@
     
     <main role="main" style="margin-top:70px;">
      
-     <div id="myCarousel" class="carousel slide pointer-event" data-ride="carousel">
-       <ol class="carousel-indicators">
-        @forelse($iklanUtamas as $key => $iklanUtama)
-         <li data-target="#myCarousel" data-slide-to="{{$loop->iteration - 1}}" class="{{ $key === 0 ? ' active' : '' }}"></li>
-        @empty
-        
-        @endforelse
-        </ol>
-       <div class="carousel-inner">
-        @forelse($iklanUtamas as $key => $iklanUtama)
-        <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
-           <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title><img src="img/he.jpg" alt=""></title><rect width="100%" height="100%" fill="#777"/><img src="img/he.jpg" alt=""><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg> -->
-           <a href="{{route('user.iklan_utama.detail', ['iklan_utama' => $iklanUtama])}}">
-            <img src="{{asset('img/iklan_utama/'. $iklanUtama->foto_utama )}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
-           </a>
-           <div class="container">
-             <div class="carousel-caption" sty>
+     <div class="container" style="margin-top:100px;">
+      <div id="myCarousel" class="carousel slide pointer-event" data-ride="carousel">
+        <ol class="carousel-indicators">
+          @forelse($iklanUtamas as $key => $iklanUtama)
+          <li data-target="#myCarousel" data-slide-to="{{$loop->iteration - 1}}" class="{{ $key === 0 ? ' active' : '' }}"></li>
+          @empty
+          
+          @endforelse
+          </ol>
+        <div class="carousel-inner">
+          @forelse($iklanUtamas as $key => $iklanUtama)
+          <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
+            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title><img src="img/he.jpg" alt=""></title><rect width="100%" height="100%" fill="#777"/><img src="img/he.jpg" alt=""><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg> -->
+            <a href="{{route('user.iklan_utama.detail', ['iklan_utama' => $iklanUtama])}}">
+              <img src="{{asset('img/iklan_utama/'. $iklanUtama->foto_utama )}}" class="bd-placeholder-img" width="100%" height="auto"  alt="">
+            </a>
+            <div class="container">
+              <div class="carousel-caption" sty>
+              </div>
             </div>
-           </div>
-         </div>
-        @empty
+          </div>
+          @empty
 
-        @endforelse
+          @endforelse
 
-       </div>
-       <button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
-         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
-       </button>
-       <button class="carousel-control-next" type="button" data-target="#myCarousel" data-slide="next">
-         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
-       </button>
+        </div>
+        <button class="carousel-control-prev" type="button" data-target="#myCarousel" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-target="#myCarousel" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
      </div>
    </main>
 
@@ -125,20 +127,21 @@
    <div class="row">
      
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+       <img src="{{asset('user/img/efisien.png')}}" alt="" width="100%">
        <h2>Efisien</h2>
        <p>Mudah dalam proses pembelian, mudah berkomunikasi 
         dengan admin, dan tidak menyulitkan pembeli</p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Orisinil</h2>
+     <img src="{{asset('user/img/original.png')}}" alt="" width="100%">
+        <h2>Orisinil</h2>
        <p>Produk asli karya siswa SMKN 1 Purwosari, meningkatkan 
         kompetensi siswa, dan mencintai produk dalam negeri </p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>High Quality</h2>
+        <img src="{{asset('user/img/high-quality.png')}}" alt="" width="100%">
+       
+        <h2>High Quality</h2>
        <p>Produk yang dijual dijamin memiliki kualitas yang sangat 
         tinggi karena dibuat dengan ketekunan dan keuletan </p>
      </div><!-- /.col-lg-4 -->

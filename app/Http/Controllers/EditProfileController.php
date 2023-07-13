@@ -10,6 +10,10 @@ use File;
 
 class EditProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index($user){
         $user = User::find($user);
         return view('admin.edit_profile.index', ['user' => $user]);

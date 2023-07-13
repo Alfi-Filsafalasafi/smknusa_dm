@@ -15,21 +15,21 @@
    <div class="row mt-5">
      
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-      
+        <img src="{{asset('user/img/lihat-produk.png')}}" alt="" width="100%">
+        <h2>Lihat Produk</h2>
+       <p>Untuk melihat detail produk yang kami jual, Anda bisa melihat langsung melalui 
+        beranda pada website kami atau juga bisa melihat produk kami berdasarkan jurusan yang telah disediakan</p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      
+        <img src="{{asset('user/img/beli-sekarang.png')}}" alt="" width="100%">
+        <h2>Beli Sekarang</h2>
+       <p>Untuk membeli produk kami, Anda dapat langsung klik link dibawah ini dan diarahkan pada nomor WhatsApp admin. 
+        Disana Anda dapat berdiskusi, berbincang, dan melakukan tawar menawar dengan admin</p>
      </div><!-- /.col-lg-4 -->
      <div class="col-lg-4">
-       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-       <h2>Heading</h2>
-       <p>And lastly this, the third column of representative placeholder content.</p>
+        <img src="{{asset('user/img/bayar.png')}}" alt="" width="100%">
+        <h2>Pembayaran</h2>
+       <p>Untuk pembayaran nanti dapat didiskusikan terlebih dahulu dengan admin, lalu dapat dilakukan sesuai kesepakatan. Pembayaran dapat dilakukan melalui transfer atau cash, uang DP atau langsung lunas, sesuai kesepakatan.</p>
        
      </div><!-- /.col-lg-4 -->
    </div><!-- /.row -->
@@ -39,8 +39,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-10 mx-auto ">
-                    <img src="{{asset('user/img/baju.jpg')}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
-                    
+                    <img src="{{asset('user/img/cara-pesan.png')}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
                 </div>
             </div>
         </div>

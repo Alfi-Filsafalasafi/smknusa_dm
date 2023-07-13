@@ -1,7 +1,7 @@
 @extends('user.layouts.master')
 
 @section('title')
-    Home
+    Detail Produk
 @endsection
 
 @section('produkActive', 'active')

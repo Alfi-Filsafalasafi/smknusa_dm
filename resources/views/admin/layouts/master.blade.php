@@ -97,7 +97,7 @@
                     <div class="navbar-nav w-100">
                     <a href="{{route('admin.dashboard')}}" class="nav-item nav-link @yield('dashboard')"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{route('iklan_utama.index')}}" class="nav-item nav-link @yield('iklanUtama')"><i class="fa fa-th me-2"></i>Banner Iklan</a>
-                    <a href="{{route('user.index')}}" class="nav-item nav-link @yield('user')"><i class="fa fa-solid fa-user me-2"></i>User</a>
+                    <a href="{{route('user.index')}}" class="nav-item nav-link @yield('user')"><i class="fa fa-solid fa-user me-2"></i>Admin Jurusan</a>
                     <!-- <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pengaturan</a>
                         <div class="dropdown-menu bg-transparent border-0">

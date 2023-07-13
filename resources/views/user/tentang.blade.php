@@ -1,7 +1,7 @@
 @extends('user.layouts.master')
 
 @section('title')
-    Home
+    Tentang Kami
 @endsection
 
 @section('tentangActive', 'active')
@@ -22,7 +22,7 @@
   
           <div class="row">
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-              <img src="{{asset('user/img/about.jpg')}}" class="img-fluid" alt="">
+              <img src="{{asset('user/img/tentangkami.png')}}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
               <h3>SMKNUSA Deals Marketplace menyediakan produk-produk 

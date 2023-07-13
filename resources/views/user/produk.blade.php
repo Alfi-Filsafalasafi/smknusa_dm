@@ -1,7 +1,7 @@
 @extends('user.layouts.master')
 
 @section('title')
-    Home
+{{strtoupper($nama_jurusan)}}
 @endsection
 
 @section('produkActive', 'active')
@@ -11,6 +11,7 @@
 @section('content')
 <main role="main" style="margin-top:70px;">
      
+     <div class="container" style="margin-top:100px;">
      <div id="myCarousel" class="carousel slide pointer-event" data-ride="carousel">
        <ol class="carousel-indicators">
         @forelse($iklan_jurusans as $key => $iklan_jurusan)
@@ -24,7 +25,7 @@
         <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
            <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label=" :  " preserveAspectRatio="xMidYMid slice" focusable="false"><title><img src="img/he.jpg" alt=""></title><rect width="100%" height="100%" fill="#777"/><img src="img/he.jpg" alt=""><text x="50%" y="50%" fill="#777" dy=".3em"> </text></svg> -->
            <a href="{{route('user.iklan_jurusan.detail', ['iklan_jurusan' => $iklan_jurusan])}}">
-            <img src="{{asset('img/iklan_jurusan/'. $iklan_jurusan->foto_utama )}}" class="bd-placeholder-img" width="100%" height="100%"  alt="">
+            <img src="{{asset('img/iklan_jurusan/'. $iklan_jurusan->foto_utama )}}" class="bd-placeholder-img" width="100%"  alt="">
            </a>
            <div class="container">
              <div class="carousel-caption" sty>
@@ -44,6 +45,7 @@
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
          <span class="sr-only">Next</span>
        </button>
+     </div>
      </div>
    </main>
 

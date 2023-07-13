@@ -13,7 +13,7 @@
                                     <p class="mb-2">Iklan Utama</p>
                                     <h6 class="mb-0">{{$jmlhIklanUtama}}</h6>
                                 @else
-                                    <p class="mb-2">Iklan Utama</p>
+                                    <p class="mb-2">Iklan Jurusan</p>
                                     <h6 class="mb-0">{{$jmlhIklanJurusan}}</h6>
                                 @endif
                             </div>

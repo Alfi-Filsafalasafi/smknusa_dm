@@ -12,6 +12,7 @@
     <link href="{{asset('user/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('user/css/style.css')}}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{asset('user/img/logo-header.png')}}">
 
 
     <title>SMKNUSA DM | @yield('title')</title>
